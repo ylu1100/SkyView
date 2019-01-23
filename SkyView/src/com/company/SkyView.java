@@ -1,21 +1,21 @@
 package com.company;
 
 public class SkyView {
-    public double[][]view;
+    private double[][]view;
     public SkyView(int numRows,int numCols,double[]scan){
         int scanindex = 0;
         boolean reverse = false;
         view = new double[numRows][numCols];
-        for(int x = 0;x<numRows;x++){
+        for(int row = 0;row<numRows;row++){
             if(reverse == true){
-                for(int y = numCols-1;y>0;y--){
-                    view[x][y]=scan[scanindex];
+                for(int col = numCols-1;col>0;col--){
+                    view[row][col]=scan[scanindex];
                     scanindex++;
                 }
             }
             if(reverse==false) {
-                for (int y = 0; y < numCols ; y++) {
-                    view[x][y] = scan[scanindex];
+                for (int col = 0; col < numCols ;col++) {
+                    view[row][col] = scan[scanindex];
                     scanindex++;
                 }
             }
@@ -37,5 +37,17 @@ public class SkyView {
             }
         }
         return sum/totalnumbers;
+    }
+    public String sv(){
+        String sv = "";
+        for (int row = 0; row < view.length; row++)
+        {
+            for (int column = 0; column < view[row].length; column++)
+            {
+                sv = sv+ view[row][column]+" ";
+            }
+            sv=sv+"\n";
+        }
+        return sv;
     }
 }
