@@ -8,7 +8,7 @@ public class SkyView {
         view = new double[numRows][numCols];
         for(int row = 0;row<numRows;row++){
             if(reverse == true){
-                for(int col = numCols-1;col>0;col--){
+                for(int col = numCols-1;col>-1;col--){
                     view[row][col]=scan[scanindex];
                     scanindex++;
                 }
