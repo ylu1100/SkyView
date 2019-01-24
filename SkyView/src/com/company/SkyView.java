@@ -38,7 +38,7 @@ public class SkyView {
         }
         return sum/totalnumbers;
     }
-    public String sv(){
+    public String toString(){
         String sv = "";
         for (int row = 0; row < view.length; row++)
         {
